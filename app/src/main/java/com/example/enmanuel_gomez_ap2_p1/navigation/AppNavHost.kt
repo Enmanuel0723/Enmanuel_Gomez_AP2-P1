@@ -14,7 +14,7 @@ import kotlinx.serialization.Serializable
 object ListScreenRoute
 
 @Serializable
-data class EditScreenRoute(val entidadId: Int? = null)
+data class EditScreenRoute(val chequeId: Int? = null)
 
 @Composable
 fun AppNavHost(
@@ -27,14 +27,14 @@ fun AppNavHost(
         composable<ListScreenRoute> {
             ListScreen(
                 onNavigateToEdit = { id ->
-                    navController.navigate(EditScreenRoute(entidadId = id))
+                    navController.navigate(EditScreenRoute(chequeId = id))
                 }
             )
         }
         composable<EditScreenRoute> { backStackEntry ->
             val route = backStackEntry.toRoute<EditScreenRoute>()
             EditScreen(
-                entidadId = route.entidadId,
+                chequeId = route.chequeId,
                 onNavigateBack = { navController.navigateUp() }
             )
         }
