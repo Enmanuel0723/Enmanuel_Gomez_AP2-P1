@@ -6,8 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.example.enmanuel_gomez_ap2_p1.presentation.entidad.EditScreen
-import com.example.enmanuel_gomez_ap2_p1.presentation.entidad.ListScreen
+import com.example.enmanuel_gomez_ap2_p1.presentation.cheque.EditScreen
+import com.example.enmanuel_gomez_ap2_p1.presentation.cheque.ListScreen
 import kotlinx.serialization.Serializable
 
 @Serializable
