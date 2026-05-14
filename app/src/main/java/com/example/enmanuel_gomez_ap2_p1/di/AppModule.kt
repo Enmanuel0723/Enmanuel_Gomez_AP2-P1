@@ -2,9 +2,9 @@ package com.example.enmanuel_gomez_ap2_p1.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.enmanuel_gomez_ap2_p1.data.local.database.EntidadDatabase
-import com.example.enmanuel_gomez_ap2_p1.data.repository.EntidadRepositoryImpl
-import com.example.enmanuel_gomez_ap2_p1.domain.repository.EntidadRepository
+import com.example.enmanuel_gomez_ap2_p1.data.local.database.ChequeDatabase
+import com.example.enmanuel_gomez_ap2_p1.data.repository.ChequeRepositoryImpl
+import com.example.enmanuel_gomez_ap2_p1.domain.repository.ChequeRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,18 +18,18 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): EntidadDatabase {
+    fun provideDatabase(@ApplicationContext context: Context): ChequeDatabase {
         return Room.databaseBuilder(
             context,
-            EntidadDatabase::class.java,
-            "entidad.db"
+            ChequeDatabase::class.java,
+            "cheque.db"
         ).build()
     }
 
     @Provides
-    fun provideEntidadDao(db: EntidadDatabase) = db.entidadDao()
+    fun provideChequeDao(db: ChequeDatabase) = db.chequeDao()
 
     @Provides
     @Singleton
-    fun provideEntidadRepository(impl: EntidadRepositoryImpl): EntidadRepository = impl
+    fun provideChequeRepository(impl: ChequeRepositoryImpl): ChequeRepository = impl
 }
